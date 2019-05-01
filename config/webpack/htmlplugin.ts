@@ -1,17 +1,17 @@
-import htmlWebpack from 'html-webpack-plugin';
-import packagejson from '../../package.json';
+import htmlWebpack from "html-webpack-plugin";
+import packagejson from "../../package.json";
 
 const env = process.env;
-const prodMode: any = env.NODE_ENV === 'production';
+const prodMode: any = env.NODE_ENV === "production";
 
 const meta = {
-  viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
   // 'Content-Security-Policy':
   //     {'http-equiv': 'Content-Security-Policy', 'content': 'default-src https:'},
-  'application-name': 'Corre que no llegas!',
-  'theme-color': env.MAIN_COLOR,
+  "application-name": "Corre que no llegas!",
+  "theme-color": env.MAIN_COLOR,
   description: packagejson.description,
-  robots: 'index,follow'
+  robots: "index,follow"
 };
 
 const htmlWebpackOptions: htmlWebpack.Config = {
@@ -20,8 +20,8 @@ const htmlWebpackOptions: htmlWebpack.Config = {
   hash: true,
   cache: true,
   minify: prodMode,
-  template: './src/app/index.html',
-  filename: 'index.html'
+  template: "./src/app/index.html",
+  filename: "index.html"
 };
 
 const loader = new htmlWebpack(htmlWebpackOptions);

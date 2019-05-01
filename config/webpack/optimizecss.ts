@@ -1,12 +1,12 @@
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 
 const pluginOptions: any = {
-  cssProcessor: require('cssnano'),
+  cssProcessor: require("cssnano"),
   cssProcessorPluginOptions: {
-    preset: ['default', {discardComments: {removeAll: true}}],
+    preset: ["default", { discardComments: { removeAll: true } }]
   },
   canPrint: true
 };
 
 export const plugin = new OptimizeCssAssetsPlugin(pluginOptions);
-export default {plugin};
+export default { plugin };

@@ -7,4 +7,4 @@ e2e_test.*
 node_modules
 tools/gulp-tasks/cldr/cldr-data/
 .vscode
-assets
+img

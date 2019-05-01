@@ -1,27 +1,30 @@
-import autoprefixer from 'autoprefixer';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import presetEnv from 'postcss-preset-env';
-import {Rule} from 'webpack';
+import autoprefixer from "autoprefixer";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import presetEnv from "postcss-preset-env";
+import { Rule } from "webpack";
 
 export const rule: Rule = {
   test: /\.scss$/,
   use: [
-    'style-loader', MiniCssExtractPlugin.loader, 'css-loader', {
-      loader: 'postcss-loader',
+    "style-loader",
+    MiniCssExtractPlugin.loader,
+    "css-loader",
+    {
+      loader: "postcss-loader",
       options: {
-        ident: 'postcss',
-        config: {path: './'},
-        plugins: (_: any) => [presetEnv()],
+        ident: "postcss",
+        config: { path: "./" },
+        plugins: (_: any) => [presetEnv()]
       }
     },
-    'sass-loader'
+    "sass-loader"
   ]
 };
 
 const options: MiniCssExtractPlugin.PluginOptions = {
-  filename: 'style.[contenthash].css'
+  filename: "style.[contenthash].css"
 };
 
 export const plugin = new MiniCssExtractPlugin(options);
 
-export default {rule, plugin}
+export default { rule, plugin };

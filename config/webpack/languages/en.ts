@@ -1,4 +1,4 @@
-export const languaje = 'en'
+export const languaje = "en";
 export const translations = {
-  'hola': 'hello'
-}
+  hola: "hello"
+};
