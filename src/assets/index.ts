@@ -1,3 +1,25 @@
-import * as bigLogo from "./img/favicon/Recurso18.png";
+import * as _microLogo from './img/favicon/Recurso15.png';
+import * as _smallLogo from './img/favicon/Recurso16.png';
+import * as _mediumLogo from './img/favicon/Recurso17.png';
+import * as _bigLogo from './img/favicon/Recurso18.png';
+import * as _microFacebook from './img/icons/social/facebook2.png';
+import * as _smallFacebook from './img/icons/social/facebook3.png';
+import * as _mediumFacebook from './img/icons/social/facebook4.png';
+import * as _bigFacebook from './img/icons/social/facebook5.png';
+import * as _microInstagram from './img/icons/social/instagram-logo.png';
+import * as _smallInstagram from './img/icons/social/instagram-logo1.png';
+import * as _mediumInstagram from './img/icons/social/instagram-logo2.png';
+import * as _bigInstagram from './img/icons/social/instagram-logo3.png';
 
-export const logo = bigLogo;
+export const bigLogo = _bigLogo;
+export const microLogo = _microLogo;
+export const smallLogo = _smallLogo;
+export const mediumLogo = _mediumLogo;
+export const microFacebook = _microFacebook;
+export const smallFacebook = _smallFacebook;
+export const mediumFacebook = _mediumFacebook;
+export const bigFacebook = _bigFacebook;
+export const microInstagram = _microInstagram;
+export const smallInstagram = _smallInstagram;
+export const mediumInstagram = _mediumInstagram;
+export const bigInstagram = _bigInstagram;

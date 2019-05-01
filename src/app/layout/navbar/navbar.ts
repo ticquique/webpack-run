@@ -1,10 +1,16 @@
-import "./navbar.scss";
-import * as navbarLayout from "./navbar.handlebars";
-import { logo } from "../../../assets";
+import './navbar.scss';
 
-const context = { logo };
+import {bigLogo, smallFacebook, smallInstagram} from '../../../assets';
 
-export const navbar = document.createElement("nav");
+import * as navbarLayout from './navbar.handlebars';
+
+const context = {
+  bigLogo,
+  smallFacebook,
+  smallInstagram
+};
+
+export const navbar = document.createElement('div');
 
 navbar.innerHTML = navbarLayout(context);
-navbar.classList.add("navbar");
+navbar.classList.add('navbar');
