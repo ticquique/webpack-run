@@ -3,17 +3,19 @@
     "baseUrl": ".",
     "paths": {
       "*": ["types/*"],
-      "app/*": ["src/app/*"]
+      "app/*": ["src/app/*"],
+      "assets/*": ["src/assets/*"]
     },
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "allowJs": true,
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "typeRoots": ["./types", "node_modules/@types"]
   }
 }

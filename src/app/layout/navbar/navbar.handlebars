@@ -1,22 +1,47 @@
 <div class="navbar-logo">
   <h1 class="logo">
-    <a tabindex="2" accesskey="1" href="/"><img src="{{bigLogo}}" alt="Corre! que no llegas" /></a>
-    <span class="alt-logo sr-only">Corre! que no llegas</span>
+    <a tabindex="-1" href="/" title="P&aacute;gina principal"><img src="{{bigLogo}}" alt="Corre! que no llegas" /></a>
+    <span class="alt-logo sr-only" aria-hidden="true">Corre! que no llegas</span>
   </h1>
 </div>
-<nav class="navbar-links__container">
-  <div class="navbar-link__item"><a href="comic"> C&oacute;mic </a></div>
-  <div class="navbar-link__item"><a href="arte"> El arte</div>
-  <div class="navbar-link__item"><a href="about"> Sobre el proyecto </a></div>
-  <div class="navbar-link__item"><a href="shop"> Tienda </a></div>
-</nav>
+<div class="navbar-links__container">
+  <div class="navbar-link__item">
+    <a tabindex="-1" href="comic" class="inner-link" title="c&oacute;mic"> C&oacute;mic </a>
+  </div>
+  <div class="navbar-link__item">
+    <a tabindex="-1" href="about" class="inner-link" title="Sobre el proyecto"> Sobre el proyecto</a>
+  </div>
+  <div class="navbar-link__item">
+    <a tabindex="-1" class="inner-link" title="Arte" aria-hidden="true" aria-haspopup="true"
+      aria-controls="navbar-submenu"> El arte </a>
+    <div class="submenu" id="navbar-submenu">
+      <div class="navbar-link__item">
+        <a tabindex="-1" href="characters" class="inner-link" title="personajes"> Personajes </a>
+      </div>
+      <div class="navbar-link__item">
+        <a tabindex="-1" href="stages" class="inner-link" title="escenarios"> Escenarios </a>
+      </div>
+      <div class="navbar-link__item">
+        <a tabindex="-1" href="sketches" class="inner-link" title="bocetos"> Bocetos </a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-link__item">
+    <a tabindex="-1" href="shop" class="inner-link" title="shop"> Tienda </a>
+  </div>
+</div>
 <div class="navbar-social__container">
   <div class="navbar-social__item">
-    <a href="https://www.instagram.com/istreart001/"><img src="{{smallInstagram}}"
+    <a href="https://www.instagram.com/istreart001/" tabindex="-1" title="instagram"><img src="{{smallInstagram}}"
         alt="https://www.instagram.com/istreart001/"></a>
   </div>
   <div class="navbar-social__item">
-    <a href="https://www.facebook.com/Istreart"><img src="{{smallFacebook}}"
+    <a href="https://www.facebook.com/Istreart" tabindex="-1" title="facebook"><img src="{{smallFacebook}}"
         alt="https://www.facebook.com/Istreart/"></a>
   </div>
 </div>
+<span class="menu-trigger" id="menu-trigger" aria-haspopup="true" aria-controls="navbar"
+  aria-describedby="menu-trigger-description" tabindex="0" role="button">
+  <img src="{{rigthMenuArrow}}" alt="Open menu">
+  <span class="menu-trigger-description sr-only" id="menu-trigger-description" aria-hidden="true">Toggle menu</span>
+</span>

@@ -1,0 +1,43 @@
+.comicMainLayout {
+  min-height: 100vh;
+}
+
+#comic__images {
+  flex: 1;
+  max-height: 100%;
+  background-color: var(--light-color);
+}
+
+#comic__images img {
+  padding: 1rem 0;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.comic__container {
+  position: relative;
+  padding-top: 2rem;
+  height: calc(100vh - 4rem);
+  display: flex;
+}
+
+.arrow__container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+  background-color: rgba(0, 0, 0, 0.03);
+  &:hover {
+    background-color: rgba(252, 252, 252, 0.03);
+  }
+  &.rightarrow__container {
+    padding: 0 4rem 0 1rem;
+  }
+  &.leftarrow__container {
+    padding: 0 1rem 0 4rem;
+    img {
+      transform: rotate(180deg);
+    }
+  }
+}

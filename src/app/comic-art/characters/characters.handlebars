@@ -1,0 +1,39 @@
+<div class="characters__container general__container">
+  <div class="characters__title general__title">
+    <h2>Los personajes</h2>
+    <div class="characters-submenu">
+      <div class="navbar-link__item">
+        <span tabindex="0" role="button" id="marta-character" title="Marta sheets"> Marta </span>
+      </div>
+      <div class="navbar-link__item">
+        <span tabindex="0" role="button" id="monica-character" title="Monica sheets"> M&oacute;nica </span>
+      </div>
+    </div>
+  </div>
+  <div class="characters__content general__content">
+    <div class="characters_left_text characters_text general__text">
+      <p id="character_description"> {{martaDescription}} </p>
+    </div>
+    <div class="characters_image__container">
+      <div class="character__images" id="character-image">
+        <img src="{{marta_acting}}">
+      </div>
+      <div class="character-arrow__container">
+        <span class="toparrow__container character-arrow" title="Go previous image" id="character-toparrow"
+          aria-controls="character__images" aria-describedby="character-toparrow-description" tabindex="0"
+          role="button">
+          <img src="{{rightArrow}}" alt="Go previous page">
+          <span class="character-toparrow-description sr-only" id="character-toparrow-description" aria-hidden="true">Go
+            previous image</span>
+        </span>
+        <span class="bottomarrow__container character-arrow" title="Go next image" id="character-bottomarrow"
+          aria-controls="character__images" aria-describedby="character-bottomarrow-description" tabindex="0"
+          role="button">
+          <img src="{{rightArrow}}" alt="Go next page">
+          <span class="character-bottomarrow-description sr-only" id="character-bottomarrow-description"
+            aria-hidden="true">Go next image</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

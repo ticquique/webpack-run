@@ -1,0 +1,52 @@
+.toparrow__container {
+  cursor: pointer;
+  img {
+    transform: rotate(-90deg);
+  }
+}
+.bottomarrow__container {
+  cursor: pointer;
+  img {
+    transform: rotate(90deg);
+  }
+}
+
+.characters__content {
+  display: flex;
+}
+
+.characters_image__container {
+  display: flex;
+  flex: 1;
+  min-width: 35rem;
+}
+
+.character__images {
+  img {
+    max-width: 100%;
+  }
+}
+
+.characters_left_text {
+  width: 20rem;
+  max-width: 30%;
+  min-width: 15rem;
+}
+
+.character-arrow__container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+  padding: 0 0 0 1rem;
+}
+
+.characters-submenu {
+  .navbar-link__item {
+    cursor: pointer;
+    padding: 0.3rem 1rem;
+  }
+}
+
+.characters__title {
+  padding-bottom: 0.5rem;
+}
