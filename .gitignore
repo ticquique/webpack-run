@@ -8,3 +8,4 @@ node_modules
 tools/gulp-tasks/cldr/cldr-data/
 .vscode
 img
+fonts

@@ -1,32 +1,22 @@
-import "./comic-main.scss";
-import mainComic from "./comic-main.handlebars";
+import './comic-main.scss';
 
-import {
-  comic1,
-  comic2,
-  comic3,
-  comic4,
-  comic5,
-  comic6,
-  comic7,
-  comic8,
-  comic9,
-  comic10,
-  comic11,
-  rightArrow
-} from "assets/index";
+import {comic1, comic10, comic11, comic2, comic3, comic4, comic5, comic6, comic7, comic8, comic9, contraportada, portada, rightArrow} from 'assets/index';
 
-const comicPages = [comic1, comic2, comic3, comic4, comic5, comic6, comic7, comic8, comic9, comic10, comic11];
-const context = { rightArrow };
+import mainComic from './comic-main.handlebars';
+
+const comicPages =
+    [portada, comic1, comic2, comic3, comic4, comic5, comic6, comic7, comic8, comic9, comic10, comic11, contraportada];
+
+const context = {rightArrow};
 let currentIndex = 0;
 
-export const comicMainLayout = document.createElement("div");
+export const comicMainLayout = document.createElement('div');
 
 function initializeMain() {
   addListeners();
-  comicMainLayout.classList.add("comicMainLayout");
-  comicMainLayout.id = "comicMainLayout";
-  comicMainLayout.setAttribute("aria-label", "comic content");
+  comicMainLayout.classList.add('comicMainLayout');
+  comicMainLayout.id = 'comicMainLayout';
+  comicMainLayout.setAttribute('aria-label', 'comic content');
   changeImage(currentIndex);
 }
 
@@ -43,37 +33,42 @@ function prevImage() {
 }
 
 function changeImage(index: number) {
-  const container = comicMainLayout.querySelector<HTMLElement>("#comic__images");
+  const container = comicMainLayout.querySelector<HTMLElement>('#comic__images');
+  let paginator = comicMainLayout.querySelector<HTMLElement>('#comicPaginator');
+
   if (container !== null) {
-    let imageElement = container.querySelector<HTMLImageElement>("img");
+    let imageElement = container.querySelector<HTMLImageElement>('img');
     if (imageElement === null) {
-      imageElement = document.createElement("img");
+      imageElement = document.createElement('img');
       container.appendChild(imageElement);
     }
+
     imageElement.src = comicPages[index];
+    const totalNumber = comicPages.length;
+    paginator.innerText = `${index + 1} / ${totalNumber}`;
   }
 }
 
 function addListeners() {
-  const leftArrowElement = comicMainLayout.querySelector<HTMLElement>("#leftarrow");
-  const rightArrowElement = comicMainLayout.querySelector<HTMLElement>("#rightarrow");
-  leftArrowElement.addEventListener("click", function() {
+  const leftArrowElement = comicMainLayout.querySelector<HTMLElement>('#leftarrow');
+  const rightArrowElement = comicMainLayout.querySelector<HTMLElement>('#rightarrow');
+  leftArrowElement.addEventListener('click', function() {
     window.requestAnimationFrame(() => prevImage());
   });
-  leftArrowElement.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") window.requestAnimationFrame(() => prevImage());
+  leftArrowElement.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') window.requestAnimationFrame(() => prevImage());
   });
-  rightArrowElement.addEventListener("click", function() {
+  rightArrowElement.addEventListener('click', function() {
     window.requestAnimationFrame(() => nextImage());
   });
-  rightArrowElement.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") window.requestAnimationFrame(() => nextImage());
+  rightArrowElement.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') window.requestAnimationFrame(() => nextImage());
   });
-  document.addEventListener("keydown", function(e) {
-    const currentpage = document.body.getAttribute("data-currentpage");
-    if (currentpage === null || currentpage === "comic") {
-      if (e.key === "ArrowRight") nextImage();
-      if (e.key === "ArrowLeft") prevImage();
+  document.addEventListener('keydown', function(e) {
+    const currentpage = document.body.getAttribute('data-currentpage');
+    if (currentpage === null || currentpage === 'comic') {
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
     }
   });
 }

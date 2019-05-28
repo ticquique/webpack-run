@@ -1,11 +1,12 @@
 .comicMainLayout {
-  min-height: 100vh;
 }
 
 #comic__images {
   flex: 1;
   max-height: 100%;
-  background-color: var(--light-color);
+  max-width: 72rem;
+  border-radius: 0.3rem;
+  position: relative;
 }
 
 #comic__images img {
@@ -17,9 +18,24 @@
 
 .comic__container {
   position: relative;
-  padding-top: 2rem;
-  height: calc(100vh - 4rem);
+  padding-top: 1rem;
+  height: calc(100vh - 2rem);
+  max-height: 55rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 40rem) {
+    padding-top: 2rem;
+  }
+}
+
+.comic__paginator {
+  position: absolute;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
 
 .arrow__container {
@@ -27,17 +43,19 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.5s ease-in;
-  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 1rem;
+  opacity: 0.6;
   &:hover {
-    background-color: rgba(252, 252, 252, 0.03);
-  }
-  &.rightarrow__container {
-    padding: 0 4rem 0 1rem;
+    opacity: 1;
   }
   &.leftarrow__container {
-    padding: 0 1rem 0 4rem;
     img {
       transform: rotate(180deg);
     }
+  }
+  @media (min-width: 60rem) {
+    padding: 2rem 3rem;
   }
 }
